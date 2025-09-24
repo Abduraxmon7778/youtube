@@ -10,8 +10,11 @@ import profile_icon from '../../assets/jack.png'
 import { Link } from 'react-router-dom'
 
 const Navbar = ({setSidebar}) => {
+  // const isLoginIn = localStorage.getItem('isLoginIn')
+
+
   return (
-    <nav className='flex-div'>
+    <nav className={`flex-div`}>
       <div className='nav-left flex-div'>
         <img className='menu_icon'onClick={()=>setSidebar(prev=>prev===false?true:false)} src={menu_icon} alt="" />
         <Link to='/'><img className='logo' src={logo} alt="" /></Link>
@@ -27,7 +30,7 @@ const Navbar = ({setSidebar}) => {
         <img src={upload_icon} alt="" />
         <img src={more_icon} alt="" />
         <img src={notification_icon} alt="" />
-        <img src={profile_icon} className='user-icon' alt="" />
+        <Link to="/profile"><img src={profile_icon} className='user-icon' alt="" /></Link>
       </div>
     </nav>
   )

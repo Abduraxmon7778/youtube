@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import './Home.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import Feed from '../../Components/Feed/Feed'
+import { Navigate } from 'react-router-dom'
 
 const Home = ({sidebar}) => {
+  const isLoginIn = localStorage.getItem('isLoginIn');
+
+  if(isLoginIn === false || isLoginIn === null){
+    return <Navigate to={"/register"} replace/>
+  }
 
   const [category, setCategory] = useState(0)
   return (
