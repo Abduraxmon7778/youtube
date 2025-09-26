@@ -71,6 +71,9 @@ app.post("/api/auth/login", async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 Server listening on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server listening on port ${PORT}`);
+// });
+
+// ✅ export handler for Vercel
+export default app;
